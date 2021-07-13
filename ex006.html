@@ -18,18 +18,42 @@
     </style>
 </head>
 <body>
-    <div id= "area" onclick="clicar()">
+    <div id= "area" >
         Interaja
      </div>
 
      <script>
-         //A função só é executada quando um evento ocorrer
-         //Nessa caso, somente quando a pessoa clicar.
-         function clicar() {
-            var a = window.document.getElementById('area')
-            a.innerText = 'Clicou (;'
+       /*Para não disparar os meus eventos do HTML dessa forma
 
-         }
+       <div id= "area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+
+        Posso usar o ""ouvidores que ficam prestando atenção, usando o addEventListener */
+
+
+
+       var a = window.document.getElementById('area') // variável global
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+
+
+         /*A função só é executada quando um evento ocorrer
+         Nessa caso, somente quando a pessoa clicar.*/
+         function clicar() {
+             a.innerText = 'Clicou (;'
+             a.style.background ='red'
+          }
+         // Nessa caso, somente quando a pessoa entrar.
+          function entrar(){
+            a.innerText = 'Entrou'
+            a.style.background='blue'
+          }
+          function sair(){
+         // Nessa caso, somente quando a pessoa sair.
+            a.innerText = 'Saiu'
+            a.style.background='green'
+          }
      </script>
 </body>
 </html>
