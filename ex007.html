@@ -4,9 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Somando números</title>
+    <style>
+        div#resu{
+        background-color: rgb(0, 247, 255);
+        font-size: 20px;
+        line-height: 50px;
+        margin-top: 10PX;
+        }
+
+    </style>
 </head>
 <body>
-    
+    <h1>Somando números</h1>
+    <input type="number" name="texto1" id="texto1">
+    <input type="number" name="texto2" id="texto2">
+    <input type="button" value="somar" onclick="somar()">
+    <div id="resu">Resultado</div>
+    <script>
+        function somar(){
+            var tn1 = /*fazer ligação com a caixa*/ window.document.getElementById('texto1')
+            //Pode usar tbm o querySelector
+            var tn2 = document.querySelector('input#texto2') 
+            // O add faz ligação com # o class com .
+            //Agora temos que criar outras variáveis di tipo number, pq quando vem de um input, umas caixa de texto, ele é texto
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var resul = document.querySelector('div#resu')
+            var s = n1 + n2
+            resul.innerHTML = (`A soma de ${n1} e ${n2} é = <strong>${s}</strong>`)
+        }
+    </script>
 </body>
 </html>
