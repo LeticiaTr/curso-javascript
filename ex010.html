@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Verificação de multas</h1>
+    Velocidade do carro: <input type="number" name="text1" id="text1"> km/h
+    <input type="button" value="verificar" onclick="calcular()">
+    <div id="res">
+   <script>
+       
+       function calcular(){
+        var vel = document.querySelector("input#text1")
+        var resultado = document.querySelector("div#res")
+        var velocidade = Number(text1.value)
+        resultado.innerHTML = (`<p> Sua velocidade é ${velocidade}</p>`)
+        if (velocidade > 60){
+            resultado.innerHTML += (`Vc foi multado!!!`) 
+            // Não podeinforma que o resultado = (  resultado.innerHTML= )tem que ser += para não apagar a msg anterior
+        }
+        resultado.innerHTML += ('<p>Dirija com segurança!</p>')
+        }
+   </script>
+   
+</body>
+</html>
